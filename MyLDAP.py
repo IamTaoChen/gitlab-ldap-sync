@@ -243,4 +243,7 @@ class myLDAP:
         return {}
 
     def __del__(self) -> None:
-        self.ldap.unbind()
+        try:
+            self.ldap.unbind()
+        except:
+            pass
